@@ -1,6 +1,6 @@
 class Component:
 
-    def __init__(self, header, title=None, time=None, desc=None):
+    def __init__(self, header=None, title=None, time=None, desc=None):
         self.header = header
         self.title = title
         self.time = time
@@ -9,12 +9,18 @@ class Component:
     def setHeader(self, header):
         self.header = header
 
-    def setTitle(self, title):
-        self.title = title
+    def setTitle(self):
+        self.title = input(f"{self.header} - Título\n- ")
     
-    def setTime(self, time):
-        self.time = time
+    def setTime(self):
+        self.time = input(f"{self.header} - Intervalo de tempo\n- ")
     
-    def setDesc(self, desc):
-        self.desc = desc
+    def setDesc(self):
+        self.desc = input(f"{self.header} - Resumo\n- ")
+    
+    def _getClassAttributes(self):
+        print(self.header)
+        print(self.title)
+        print(self.time)
+        print(self.desc)
     
