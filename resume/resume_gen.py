@@ -1,12 +1,13 @@
 # Text Variables
-Header = '>>>Esse currículo foi feito 100% em Python. Para código fonte, acesse meu github.'
+Header = '>>>Esse currículo foi feito com Python, HTML e CSS. Para código fonte, acesse meu github.'
 Name = 'JOSE RODRIGUES'
 Title = 'Analista de sistemas e dados'
-Contact = '(51) 994241220\njoseluisrjunior@gmail.com\nwww.linkedin.com/in/joserodrigs\nwww.github.com/runiorr'
+Contact = '(51) 994241220\njoseluisrjunior@gmail.com\n'
+sites = 'www.linkedin.com/in/joserodrigs\nwww.github.com/runiorr'
 
 ProjectsHeader = 'PROJETOS'
 ProjectOneTitle = 'Gerador de currículos'
-ProjectOneDesc = '- Published by Towards Data Science\n- Analyzed user survey to recommend most profitable future revenue source\n- Cleaned/visualized data using pandas/matplotlib libraries in Python'
+ProjectOneDesc = '- Currículos são gerados dinâmicamente com base nas informações fornecidas\n- Utilizei HTML, CSS, Python e Matplotlib para criar'
 
 WorkHeader = 'EXPERIÊNCIA'
 WorkOneTitle = 'DB | Desenvolvedor full stack'
@@ -52,15 +53,16 @@ plt.axis('off')
 # Figure(850x1100)
 
 # add text
-plt.annotate(Header, (.02,0.98), weight='regular', fontsize=8, alpha=.75)
+plt.annotate(Header, (.02,.99), weight='regular', fontsize=8, alpha=.75)
 plt.annotate(Name, (.02,.94), weight='bold', fontsize=20)
-plt.annotate(Title, (.02,.91), weight='regular', fontsize=14)
-plt.annotate("Contato", (.7,.96), weight='bold', fontsize=14, color='#ffffff')
+plt.annotate(Title, (.02,.915), weight='regular', fontsize=14)
+plt.annotate(sites, (.02,.885), weight='regular', fontsize=8, alpha=.75)
+plt.annotate("Contato", (.7,.96), weight='bold', fontsize=10, color='#ffffff')
 plt.annotate(Contact, (.7,.9), weight='regular', fontsize=8, color='#ffffff')
 
 plt.annotate(ProjectsHeader, (.02,.86), weight='bold', fontsize=10, color='#58C1B2')
 plt.annotate(ProjectOneTitle, (.02,.832), weight='bold', fontsize=10)
-plt.annotate(ProjectOneDesc, (.04,.78), weight='regular', fontsize=9)
+plt.annotate(ProjectOneDesc, (.04,.8), weight='regular', fontsize=9)
 
 plt.annotate(WorkHeader, (.02,.745), weight='bold', fontsize=10, color='#58C1B2')
 
@@ -73,8 +75,9 @@ plt.annotate(WorkTwoTime, (.02,.601), weight='regular', fontsize=9, alpha=.6)
 plt.annotate(WorkTwoDesc, (.04,.555), weight='regular', fontsize=9)
 
 plt.annotate(EduHeader, (.02,.510), weight='bold', fontsize=10, color='#58C1B2')
-plt.annotate(EduOneTitle, (.02,.490), weight='bold', fontsize=10)
-plt.annotate(EduOneTime, (.02,.475), weight='regular', fontsize=9, alpha=.6)
+
+plt.annotate(EduOneTitle, (.02,.480), weight='bold', fontsize=10)
+plt.annotate(EduOneTime, (.02,.465), weight='regular', fontsize=9, alpha=.6)
 
 plt.annotate(SkillsHeader, (.7,.8), weight='bold', fontsize=10, color='#ffffff')
 plt.annotate(SkillsDesc, (.7,.65), weight='regular', fontsize=10, color='#ffffff')
