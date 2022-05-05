@@ -52,7 +52,6 @@ skill = Skill(
 # edu = Education()
 # edu.setTitle()
 # edu.setTime()
-# edu.setDesc()
 
 # skill = Skill()
 # skill.setDesc()

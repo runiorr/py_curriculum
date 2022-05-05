@@ -32,39 +32,51 @@ class ResumeBuilder:
         Header = '>>>Esse currículo foi feito 100% em Python. Para código fonte, leia o QR Code.'
 
         left = 0.02
-        right = 0.07
+        right = 0.7
+        paragraph = .035
 
-        plt.annotate(Header, (left,.99), weight='regular', fontsize=8, alpha=.75)
-        plt.annotate(self.info.header, (left,.94), weight='bold', fontsize=20)
-        plt.annotate(self.info.title, (left,.915), weight='regular', fontsize=14)
-        plt.annotate("Contato", (right,.96), weight='bold', fontsize=10, color='#ffffff')
-        plt.annotate(self.info.time, (right,.915), weight='regular', fontsize=8, alpha=.75)
-        plt.annotate(self.info.desc, (right,.9), weight='regular', fontsize=8, color='#ffffff')
+        name_heigh = .93
+        role_heigh = name_heigh - .025
+        plt.annotate(Header, (left, .98), weight='regular', fontsize=8, alpha=.75)
+        plt.annotate(self.info.header, (left, name_heigh), weight='bold', fontsize=20) # Name
+        plt.annotate(self.info.title, (left, role_heigh), weight='regular', fontsize=14) # Role
 
-        plt.annotate(self.project.header, (left,.86), weight='bold', fontsize=10, color='#58C1B2')
-        plt.annotate(self.project.title, (left,.832), weight='bold', fontsize=10)
-        plt.annotate(self.project.desc, (.04,.8), weight='regular', fontsize=9)
+        CONTATO_heigh = .97
+        contact_heigh = CONTATO_heigh - .02
+        sites_heigh = contact_heigh - .015
+        plt.annotate("Contato", (right, CONTATO_heigh), weight='bold', fontsize=10, color='#ffffff')
+        plt.annotate(self.info.time, (right, contact_heigh), weight='regular', fontsize=8, color='#ffffff') # Contact
+        plt.annotate(self.info.desc, (right, sites_heigh), weight='regular', fontsize=8, color='#ffffff') # Sites
 
-        plt.annotate(self.work.header, (left,.745), weight='bold', fontsize=10, color='#58C1B2')
+        p_header = .86
+        p_title = p_header - .02
+        p_desc = p_title - .02
+        plt.annotate(self.project.header, (left, p_header), weight='bold', fontsize=10, color='#58C1B2')
+        plt.annotate(self.project.title, (left, p_title), weight='bold', fontsize=10)
+        plt.annotate(self.project.desc, (paragraph, p_desc), weight='regular', fontsize=9)
 
-        plt.annotate(self.work.title, (left,.715), weight='bold', fontsize=10) # 30 de diferença p de cima
-        plt.annotate(self.work.time, (left,.698), weight='regular', fontsize=9, alpha=.6) # 15 de diferença pro de cima
-        plt.annotate(self.work.desc, (.04,.668), weight='regular', fontsize=9) # 30 de diferença pro de cima
+        w_header = p_desc - .045
+        w_title = w_header - .02
+        w_time = w_title - .02
+        w_desc = w_time - .035
+        plt.annotate(self.work.header, (left, w_header), weight='bold', fontsize=10, color='#58C1B2')
+        plt.annotate(self.work.title, (left, w_title), weight='bold', fontsize=10)
+        plt.annotate(self.work.time, (left, w_time), weight='regular', fontsize=9, alpha=.6)
+        plt.annotate(self.work.desc, (paragraph, w_desc), weight='regular', fontsize=9)
 
-        # plt.annotate(self.work.title, (left,.619), weight='bold', fontsize=10) # 62 de dif
-        # plt.annotate(self.work.time, (left,.601), weight='regular', fontsize=9, alpha=.6)
-        # plt.annotate(self.work.desc, (.04,.555), weight='regular', fontsize=9)
+        e_header = w_desc - .045
+        e_title = e_header - .02
+        e_time = e_title - .02
+        plt.annotate(self.education.header, (left, e_header), weight='bold', fontsize=10, color='#58C1B2')
+        plt.annotate(self.education.title, (left, e_title), weight='bold', fontsize=10)
+        plt.annotate(self.education.time, (left, e_time), weight='regular', fontsize=9, alpha=.6)
 
-        plt.annotate(self.education.header, (left,.510), weight='bold', fontsize=10, color='#58C1B2')
+        s_header = .85
+        s_desc = s_header - .13
+        plt.annotate(self.skills.header, (right, s_header), weight='bold', fontsize=10, color='#ffffff')
+        plt.annotate(self.skills.desc, (right, s_desc), weight='regular', fontsize=10, color='#ffffff')
 
-        plt.annotate(self.education.title, (left,.480), weight='bold', fontsize=10)
-        plt.annotate(self.education.time, (left,.465), weight='regular', fontsize=9, alpha=.6)
-
-        plt.annotate(self.skills.header, (.7,.8), weight='bold', fontsize=10, color='#ffffff')
-        plt.annotate(self.skills.desc, (.7,.65), weight='regular', fontsize=10, color='#ffffff')
-
-        # #add qr code
-
+        # Add QR Code
         plt.annotate("Github do criador", (.754,.145), weight='bold', fontsize=10, color='#ffffff')
         qr_code = mpimg.imread('runiorrportolio.png')
         imagebox = OffsetImage(qr_code, zoom=0.055)
