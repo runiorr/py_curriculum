@@ -2,7 +2,7 @@
 Header = '>>>Esse currículo foi feito 100% em Python. Para código fonte, acesse meu github.'
 Name = 'JOSE RODRIGUES'
 Title = 'Analista de sistemas e dados'
-Contact = 'Porto Alegre, RS\njoseluisrjunior@gmail.com\nwww.linkedin.com/in/joserodrigs\nwww.github.com/runiorr'
+Contact = '(51) 994241220\njoseluisrjunior@gmail.com\nwww.linkedin.com/in/joserodrigs\nwww.github.com/runiorr'
 
 ProjectsHeader = 'PROJETOS'
 ProjectOneTitle = 'Gerador de currículos'
@@ -37,8 +37,6 @@ plt.rcParams['font.family'] = 'sans-serif'
 plt.rcParams['font.sans-serif'] = 'STIXGeneral'
 fig, ax = plt.subplots(figsize=(8.5, 11))
 
-# Figure(850x1100)
-# AxesSubplot(0.125,0.11;0.775x0.77)
 
 # Decorative Lines
 ax.axvline(x=.5, ymin=0, ymax=1, color='#007ACC', alpha=0.0, linewidth=50)
@@ -51,11 +49,14 @@ ax.set_facecolor('white')
 # remove axes
 plt.axis('off')
 
+# Figure(850x1100)
+
 # add text
-plt.annotate(Header, (.02,.98), weight='regular', fontsize=8, alpha=.75)
+plt.annotate(Header, (.02,0.98), weight='regular', fontsize=8, alpha=.75)
 plt.annotate(Name, (.02,.94), weight='bold', fontsize=20)
 plt.annotate(Title, (.02,.91), weight='regular', fontsize=14)
-plt.annotate(Contact, (.7,.906), weight='regular', fontsize=8, color='#ffffff')
+plt.annotate("Contato", (.7,.96), weight='bold', fontsize=14, color='#ffffff')
+plt.annotate(Contact, (.7,.9), weight='regular', fontsize=8, color='#ffffff')
 
 plt.annotate(ProjectsHeader, (.02,.86), weight='bold', fontsize=10, color='#58C1B2')
 plt.annotate(ProjectOneTitle, (.02,.832), weight='bold', fontsize=10)
