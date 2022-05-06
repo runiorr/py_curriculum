@@ -59,6 +59,9 @@ class AnnotateVisitor:
 
     def visitSkills(self, skill: Skills):
         s_header = .85
-        s_desc = s_header - desc_distance
         plt.annotate(skill.header, (right, s_header), weight='bold', fontsize=10, color='#ffffff')
-        plt.annotate(skill.desc, (right, s_desc), weight='regular', fontsize=10, color='#ffffff')
+        for s in skill.desc:
+            s = s.strip().title()
+            s_desc = s_header - desc_distance
+            plt.annotate(s, (right, s_desc), weight='regular', fontsize=10, color='#ffffff')
+            s_header -= desc_distance
