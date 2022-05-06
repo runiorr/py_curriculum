@@ -1,6 +1,3 @@
-from components.visitor.Ivisitor import IVisitor
-
-
 class Component:
 
     def __init__(self, header=None, title=None, time=None, desc=None):
@@ -21,13 +18,7 @@ class Component:
     def setDesc(self):
         self.desc = input(f"{self.header} - Resumo\n- ")
     
-    def _getClassAttributes(self):
-        print(self.header)
-        print(self.title)
-        print(self.time)
-        print(self.desc)
-    
-    def accept(self, v:IVisitor):
-        visit_func = eval(f"v.visit{self.__class__.__name__}(self)")
-        visit_func()
+    def accept(self, visitor):
+        visit_func = eval(f"visitor.visit{self.__class__.__name__}")
+        visit_func(self)
     

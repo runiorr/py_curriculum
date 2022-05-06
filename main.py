@@ -29,8 +29,7 @@ skill.setDesc()
 
 print("Pronto! Espere o download começar.")
 
-resume = ResumeBuilder(info, proj, work, edu, skill)
-resume.build_resume(type="pdf")
+ResumeBuilder(info, proj, work, edu, skill, "pdf")
 
 
 
