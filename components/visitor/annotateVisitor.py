@@ -23,7 +23,7 @@ class AnnotateVisitor:
         email = cellphone - desc_distance # contatos
         linkedin = email - desc_distance # sites
         github = linkedin - desc_distance # sites
-        plt.annotate("Informações", (right, CONTATO_header), weight='bold', fontsize=10, color='#ffffff')
+        plt.annotate("Contato", (right, CONTATO_header), weight='bold', fontsize=10, color='#ffffff')
         plt.annotate(information.time.split()[0], (right, cellphone), weight='regular', fontsize=8, color='#ffffff') # Contact
         plt.annotate(information.time.split()[1], (right, email), weight='regular', fontsize=8, color='#ffffff') # Sites
         plt.annotate(information.desc.split()[0], (right, linkedin), weight='regular', fontsize=8, color='#ffffff')
