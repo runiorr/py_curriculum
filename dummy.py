@@ -20,7 +20,7 @@ proj = Project(
 work = Work(
     title="DB | Desenvolvedor full stack", 
     time="02/2022 - Presente", 
-    desc="- Construção de portal interno utilizando Java, Typescript, React e Oracle\n- Coleta de dados da AWS utilizando Python e Kafka para consumir em Data lake"
+    desc="- Coleta de dados da AWS utilizando Python e Kafka para consumir em Data lake"
     )
 
 edu = Education(
@@ -29,8 +29,7 @@ edu = Education(
 )
 
 skill = Skill(
-    desc="- Python, Pandas, Power BI, SQL\n- Typescript, Node.js, React\n- Java, Spring\n- Kafka, Docker, Git\n- Microsserviços e APIs\n- Testes unitários\n- Padrões de projetos"
-)
+    desc="- Python, Pandas, Power BI, SQL")
 
 print("Pronto! Espere o download começar.")
 

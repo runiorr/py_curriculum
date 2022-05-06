@@ -34,45 +34,57 @@ class ResumeBuilder:
         left = 0.02
         right = 0.7
         paragraph = .035
+        header_distance = .045
+        title_distance = .02
+        time_distance = .015
+        desc_distance = .02
 
         name_heigh = .93
-        role_heigh = name_heigh - .025
+        role_heigh = name_heigh - .026
         plt.annotate(Header, (left, .98), weight='regular', fontsize=8, alpha=.75)
         plt.annotate(self.info.header, (left, name_heigh), weight='bold', fontsize=20) # Name
         plt.annotate(self.info.title, (left, role_heigh), weight='regular', fontsize=14) # Role
 
-        CONTATO_heigh = .97
-        contact_heigh = CONTATO_heigh - .02
-        sites_heigh = contact_heigh - .015
-        plt.annotate("Contato", (right, CONTATO_heigh), weight='bold', fontsize=10, color='#ffffff')
-        plt.annotate(self.info.time, (right, contact_heigh), weight='regular', fontsize=8, color='#ffffff') # Contact
-        plt.annotate(self.info.desc, (right, sites_heigh), weight='regular', fontsize=8, color='#ffffff') # Sites
-
+        CONTATO_header = .97
+        cellphone = CONTATO_header - desc_distance # contatos
+        email = cellphone - desc_distance # contatos
+        linkedin = email - desc_distance # sites
+        github = linkedin - desc_distance # sites
+        plt.annotate("Informações", (right, CONTATO_header), weight='bold', fontsize=10, color='#ffffff')
+        plt.annotate(self.info.time.split()[0], (right, cellphone), weight='regular', fontsize=8, color='#ffffff') # Contact
+        plt.annotate(self.info.time.split()[1], (right, email), weight='regular', fontsize=8, color='#ffffff') # Sites
+        plt.annotate(self.info.desc.split()[0], (right, linkedin), weight='regular', fontsize=8, color='#ffffff')
+        plt.annotate(self.info.desc.split()[1], (right, github), weight='regular', fontsize=8, color='#ffffff')
+        
         p_header = .86
-        p_title = p_header - .02
-        p_desc = p_title - .02
+        p_title = p_header - title_distance
+        p_desc = p_title - desc_distance
+
         plt.annotate(self.project.header, (left, p_header), weight='bold', fontsize=10, color='#58C1B2')
         plt.annotate(self.project.title, (left, p_title), weight='bold', fontsize=10)
         plt.annotate(self.project.desc, (paragraph, p_desc), weight='regular', fontsize=9)
 
-        w_header = p_desc - .045
-        w_title = w_header - .02
-        w_time = w_title - .02
-        w_desc = w_time - .035
+        w_header = p_desc - header_distance
+        w_title = w_header - title_distance
+        w_time = w_title - time_distance
+        w_desc = w_time - desc_distance
+
         plt.annotate(self.work.header, (left, w_header), weight='bold', fontsize=10, color='#58C1B2')
         plt.annotate(self.work.title, (left, w_title), weight='bold', fontsize=10)
         plt.annotate(self.work.time, (left, w_time), weight='regular', fontsize=9, alpha=.6)
         plt.annotate(self.work.desc, (paragraph, w_desc), weight='regular', fontsize=9)
 
-        e_header = w_desc - .045
-        e_title = e_header - .02
-        e_time = e_title - .02
+        e_header = w_desc - header_distance
+        e_title = e_header - title_distance
+        e_time = e_title - time_distance
+
         plt.annotate(self.education.header, (left, e_header), weight='bold', fontsize=10, color='#58C1B2')
         plt.annotate(self.education.title, (left, e_title), weight='bold', fontsize=10)
         plt.annotate(self.education.time, (left, e_time), weight='regular', fontsize=9, alpha=.6)
 
         s_header = .85
-        s_desc = s_header - .13
+        s_desc = s_header - desc_distance
+
         plt.annotate(self.skills.header, (right, s_header), weight='bold', fontsize=10, color='#ffffff')
         plt.annotate(self.skills.desc, (right, s_desc), weight='regular', fontsize=10, color='#ffffff')
 

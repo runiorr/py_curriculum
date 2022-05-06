@@ -1,30 +1,30 @@
-from components.informations import Information 
-from components.projects import Project
-from components.works import Work 
-from components.educations import Education 
-from components.skills import Skill
+from components.informations import Informations
+from components.projects import Projects
+from components.works import Works
+from components.educations import Educations 
+from components.skills import Skills
 from generate.curriculum import ResumeBuilder
 
-info = Information()
+info = Informations()
 info.setName()
 info.setRole()
 info.setContact()
 info.setSites()
 
-proj = Project()
+proj = Projects()
 proj.setTitle()
 proj.setDesc()
 
-work = Work()
+work = Works()
 work.setTitle()
 work.setTime()
 work.setDesc()
 
-edu = Education()
+edu = Educations()
 edu.setTitle()
 edu.setTime()
 
-skill = Skill()
+skill = Skills()
 skill.setDesc()
 
 print("Pronto! Espere o download começar.")

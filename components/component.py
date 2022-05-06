@@ -1,3 +1,6 @@
+from components.visitor.Ivisitor import IVisitor
+
+
 class Component:
 
     def __init__(self, header=None, title=None, time=None, desc=None):
@@ -23,4 +26,8 @@ class Component:
         print(self.title)
         print(self.time)
         print(self.desc)
+    
+    def accept(self, v:IVisitor):
+        visit_func = eval(f"v.visit{self.__class__.__name__}(self)")
+        visit_func()
     

@@ -1,18 +1,22 @@
 from components.component import Component
 
-class Information(Component):
+class Informations(Component):
 
     def __init__(self, name=None, title=None, contact=None, sites=None):
         super().__init__(name, title, contact, sites)
     
     def setName(self):
-        self.header = input("Qual o seu nome?\n- ")
+        self.header = input("Qual o seu nome?\n- ").title()
     
     def setRole(self):
-        self.title = input("Qual cargo deseja colocar?\n- ")
+        self.title = input("Qual cargo deseja colocar?\n- ").title()
 
     def setContact(self):
-        self.time = input("Informações de contato (numero e email):\n- ")
-    
+        cellphone = input("Qual seu número de telefone?\n- ")
+        email = input("Qual seu email?\n- ")
+        self.time = f"{cellphone} {email}"
+
     def setSites(self):
-        self.desc = input("URL de seu Linkedin e/ou Github\:\n- ")
+        linkedin = input("Qual seu linkedin?\n- ")
+        github = input("Qual seu github?\n- ")
+        self.desc = f"{linkedin} {github}"
