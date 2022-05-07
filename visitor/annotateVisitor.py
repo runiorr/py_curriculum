@@ -20,7 +20,7 @@ class AnnotateVisitor:
         plt.annotate(information.header, (left, name_heigh), weight='bold', fontsize=20) # Name
         plt.annotate(information.title, (left, role_heigh), weight='regular', fontsize=14) # Role
         
-        CONTATO_header = .97
+        CONTATO_header = .978
         cellphone = CONTATO_header - desc_distance # contatos
         email = cellphone - desc_distance # contatos
         linkedin = email - desc_distance # sites
