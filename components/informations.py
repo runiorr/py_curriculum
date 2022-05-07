@@ -14,9 +14,9 @@ class Informations(Component):
     def setContact(self):
         cellphone = input("Qual seu número de telefone?\n- ")
         email = input("Qual seu email?\n- ")
-        self.time = f"{cellphone} {email}"
+        self.time = f"{cellphone},{email}"
 
     def setSites(self):
         linkedin = input("Qual seu linkedin?\n- ")
         github = input("Qual seu github?\n- ")
-        self.desc = f"{linkedin} {github}"
+        self.desc = f"{linkedin},{github}"

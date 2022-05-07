@@ -25,10 +25,10 @@ class ResumeBuilder:
         [resume.accept(annotateVisitor) for resume in resume_text]
         
         # Add QR Code
-        plt.annotate("Github do criador", (.754,.145), weight='bold', fontsize=10, color='#ffffff')
-        qr_code = mpimg.imread('runiorrportfolio.png')
-        imagebox = OffsetImage(qr_code, zoom=0.055)
-        ab = AnnotationBbox(imagebox, (0.84, 0.08))
+        plt.annotate("Apoie o criador", (.762,.22), weight='bold', fontsize=11, color='#ffffff')
+        qr_code = mpimg.imread('runiorr_qrcode.png')
+        imagebox = OffsetImage(qr_code, zoom=0.22)
+        ab = AnnotationBbox(imagebox, (0.84, 0.108))
         ax.add_artist(ab)
 
-        plt.savefig(f'resume.{type}',format=type , dpi=300, bbox_inches='tight')
+        plt.savefig(f'resume.{type}',format=type , dpi=350, bbox_inches='tight')

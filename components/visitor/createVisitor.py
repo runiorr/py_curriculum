@@ -7,6 +7,7 @@ from components.skills import Skills
 class CreateVisitor:
 
     def validate_items(self, items):
+        if items[0] == "": items[0]=1
         try:
             items[0] = int(items[0])
         except:
@@ -14,7 +15,6 @@ class CreateVisitor:
         if type(items[0]) != int: return False
         if items[0] <= 0: return False
         if items[0] >= 4: return False
-        items[0] = int(items[0])
         return True
 
     def visitInformations(self, information: Informations):
@@ -24,7 +24,7 @@ class CreateVisitor:
         information.setSites()
 
     def visitProjects(self, project: Projects):
-        items = [input("Quantos projetos irá adicionar?\n- ")]
+        items = [input("Quantos projetos irá adicionar? (Limite é 3 | 'Enter para 1)\n- ")]
         if self.validate_items(items):
             for item in range(items[0]):
                 project.setTitle()
@@ -32,7 +32,7 @@ class CreateVisitor:
         else: self.visitProjects(project) 
 
     def visitWorks(self, work: Works):
-        items = [input("Quantas experiências irá adicionar?\n- ")]
+        items = [input("Quantas experiências irá adicionar? (Limite é 3 | 'Enter para 1)\n- ")]
         if self.validate_items(items):
             for item in range(items[0]):
                 work.setTitle()
@@ -41,7 +41,7 @@ class CreateVisitor:
         else: self.visitWorks(work)
 
     def visitEducations(self, education: Educations):
-        items = [input("Quantas faculdades irá adicionar?\n- ")]
+        items = [input("Quantas formações irá adicionar? (Limite é 3 | 'Enter para 1)\n- ")]
         if self.validate_items(items):
             for item in range(items[0]):
                 education.setTitle()
