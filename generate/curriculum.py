@@ -2,7 +2,7 @@ from components.component import Component
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
-from components.visitor.annotateVisitor import AnnotateVisitor
+from visitor.annotateVisitor import AnnotateVisitor
 
 class ResumeBuilder:
 

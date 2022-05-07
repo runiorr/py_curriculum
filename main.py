@@ -4,7 +4,7 @@ from components.works import Works
 from components.educations import Educations 
 from components.skills import Skills
 from generate.curriculum import ResumeBuilder
-from components.visitor.createVisitor import CreateVisitor
+from visitor.createVisitor import CreateVisitor
 
 info = Informations()
 proj = Projects()
