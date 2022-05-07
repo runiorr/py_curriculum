@@ -4,28 +4,17 @@ from components.works import Works
 from components.educations import Educations 
 from components.skills import Skills
 from generate.curriculum import ResumeBuilder
+from components.visitor.createVisitor import CreateVisitor
 
 info = Informations()
-info.setName()
-info.setRole()
-info.setContact()
-info.setSites()
-
 proj = Projects()
-proj.setTitle()
-proj.setDesc()
-
 work = Works()
-work.setTitle()
-work.setTime()
-work.setDesc()
-
 edu = Educations()
-edu.setTitle()
-edu.setTime()
-
 skill = Skills()
-skill.setDesc()
+
+text_content = [info, proj, work, edu, skill]
+createVisitor = CreateVisitor()
+[text.accept(createVisitor) for text in text_content]
 
 print("Pronto! Espere o download começar.")
 

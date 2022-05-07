@@ -2,8 +2,8 @@ from components.component import Component
 
 class Informations(Component):
 
-    def __init__(self, name=None, title=None, contact=None, sites=None):
-        super().__init__(name, title, contact, sites)
+    def __init__(self):
+        super().__init__()
     
     def setName(self):
         self.header = input("Qual o seu nome?\n- ").title()

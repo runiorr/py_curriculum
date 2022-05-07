@@ -12,12 +12,16 @@ class AnnotateVisitor:
     last_work = 0
 
     def visitInformations(self, information: Informations):
+        information.getItems()
+
         Header = '>>>Esse currículo foi feito 100% em Python. Para código fonte, leia o QR Code.'
         plt.annotate(Header, (left, .98), weight='regular', fontsize=8, alpha=.75)
+
         name_heigh = .93
         role_heigh = name_heigh - .026
         plt.annotate(information.header, (left, name_heigh), weight='bold', fontsize=20) # Name
         plt.annotate(information.title, (left, role_heigh), weight='regular', fontsize=14) # Role
+        
         CONTATO_header = .97
         cellphone = CONTATO_header - desc_distance # contatos
         email = cellphone - desc_distance # contatos
@@ -30,6 +34,8 @@ class AnnotateVisitor:
         plt.annotate(information.desc.split()[1], (right, github), weight='regular', fontsize=8, color='#ffffff')
 
     def visitProjects(self, project: Projects):
+        project.getItems()
+
         p_header = .86
         p_title = p_header - title_distance
         p_desc = p_title - desc_distance
@@ -39,6 +45,8 @@ class AnnotateVisitor:
         plt.annotate(project.desc, (paragraph, p_desc), weight='regular', fontsize=9)
 
     def visitWorks(self, work: Works):
+        work.getItems()
+
         w_header = self.last_project - header_distance
         w_title = w_header - title_distance
         w_time = w_title - time_distance
@@ -50,6 +58,8 @@ class AnnotateVisitor:
         plt.annotate(work.desc, (paragraph, w_desc), weight='regular', fontsize=9)
 
     def visitEducations(self, education: Educations):
+        education.getItems()
+
         e_header = self.last_work - header_distance
         e_title = e_header - title_distance
         e_time = e_title - time_distance
@@ -58,6 +68,8 @@ class AnnotateVisitor:
         plt.annotate(education.time, (left, e_time), weight='regular', fontsize=9, alpha=.6)
 
     def visitSkills(self, skill: Skills):
+        skill.getItems()
+
         s_header = .85
         plt.annotate(skill.header, (right, s_header), weight='bold', fontsize=10, color='#ffffff')
         for s in skill.desc:
