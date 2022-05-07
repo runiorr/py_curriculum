@@ -1,3 +1,5 @@
+from textwrap import wrap
+
 class Component:
 
     def __init__(self, header=None, title=None, time=None, desc=None):
@@ -31,3 +33,5 @@ class Component:
         print(self.time, type(self.time))
         print(self.desc, type(self.desc))
     
+    def breakLines(self, text):
+        return wrap(text,75)

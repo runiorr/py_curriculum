@@ -4,5 +4,6 @@ paragraph = .035
 header_distance = .01
 mini_header_distance = .035
 title_distance = .02
+paragraph_distance = .015
 time_distance = .015
 desc_distance = .02

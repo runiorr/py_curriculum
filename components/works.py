@@ -21,4 +21,6 @@ class Works(Component):
         if self.desc == None:
             self.desc = []
 
-        self.desc.append(input(f"{self.header} - Resumo\n- "))
+        text = input(f"{self.header} - Resumo\n- ")
+
+        self.desc.append(self.breakLines(text))

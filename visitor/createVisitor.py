@@ -29,6 +29,7 @@ class CreateVisitor:
             for item in range(items[0]):
                 project.setTitle()
                 project.setDesc()
+                print(project.desc)
         else: self.visitProjects(project) 
 
     def visitWorks(self, work: Works):
@@ -38,6 +39,7 @@ class CreateVisitor:
                 work.setTitle()
                 work.setTime()
                 work.setDesc()
+                print(work.desc)
         else: self.visitWorks(work)
 
     def visitEducations(self, education: Educations):

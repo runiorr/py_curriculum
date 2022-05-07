@@ -3,7 +3,7 @@ from components.projects import Projects
 from components.works import Works
 from components.educations import Educations 
 from components.skills import Skills
-from generate.margins import left, right, paragraph, header_distance, mini_header_distance, title_distance, time_distance, desc_distance
+from generate.margins import left, right, paragraph, header_distance, mini_header_distance, title_distance, time_distance, desc_distance, paragraph_distance
 
 import matplotlib.pyplot as plt
 
@@ -36,9 +36,11 @@ class AnnotateVisitor:
         p_title = p_header - title_distance
         p_desc = p_title - desc_distance
         plt.annotate(project.header, (left, p_header), weight='bold', fontsize=10, color='#58C1B2')
-        for ind in range(len(project.desc)):
+        for ind in range(len(project.title)):
             plt.annotate(project.title[ind], (left, p_title), weight='bold', fontsize=10)
-            plt.annotate(project.desc[ind], (paragraph, p_desc), weight='regular', fontsize=9)
+            for text in range(len(project.desc[ind])):
+                plt.annotate(project.desc[ind][text], (paragraph, p_desc), weight='regular', fontsize=9)
+                p_desc = p_desc - paragraph_distance
             p_title = p_desc - mini_header_distance
             p_desc = p_title - desc_distance
         AnnotateVisitor.last_project = p_desc
@@ -49,10 +51,12 @@ class AnnotateVisitor:
         w_time = w_title - time_distance
         w_desc = w_time - desc_distance
         plt.annotate(work.header, (left, w_header), weight='bold', fontsize=10, color='#58C1B2')
-        for ind in range(len(work.desc)):
+        for ind in range(len(work.title)):
             plt.annotate(work.title[ind], (left, w_title), weight='bold', fontsize=10)
             plt.annotate(work.time[ind], (left, w_time), weight='regular', fontsize=9, alpha=.6)
-            plt.annotate(work.desc[ind], (paragraph, w_desc), weight='regular', fontsize=9)
+            for text in range(len(work.desc[ind])):
+                plt.annotate(work.desc[ind][text], (paragraph, w_desc), weight='regular', fontsize=9)
+                w_desc = w_desc - paragraph_distance
             w_title = w_desc - mini_header_distance
             w_time = w_title - time_distance
             w_desc = w_time - desc_distance

@@ -20,5 +20,7 @@ class Projects(Component):
     def setDesc(self):
         if self.desc == None:
             self.desc = []
+        
+        text = input(f"{self.header} - Resumo\n- ")
 
-        self.desc.append(input(f"{self.header} - Resumo\n- "))
+        self.desc.append(self.breakLines(text))
