@@ -20,9 +20,9 @@ class ResumeBuilder:
         # Remove axes
         plt.axis('off')
 
-        resume_text = [info, proj, work, edu, skill]
+        resume_section = [info, proj, work, edu, skill]
         pdfVisitor = PdfVisitor()
-        [resume.accept(pdfVisitor) for resume in resume_text]
+        [section.accept(pdfVisitor) for section in resume_section]
         
         # Add QR Code
         plt.annotate("Apoie o criador", (.762,.22), weight='bold', fontsize=11, color='#ffffff')

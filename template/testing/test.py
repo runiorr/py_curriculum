@@ -8,6 +8,7 @@ html_string = """
         body {body}
         html, body {html}
         h2 {h2}
+        p {p}
 
         #right {right}
         #right_box {right_box}
@@ -15,7 +16,6 @@ html_string = """
         #right_content {right_content}
 
         #left {left}
-        .information {information}
     </style>
     <body>
         <div id="right">
@@ -37,15 +37,17 @@ html_string = """
                 </div>
                 <div id="right_box">
                     <h3 id="right_header">Apoie o criador</h3>
-                    <img src={qrcode} width="100" width="110" height="110">
+                    <img src={qrcode} width="110" height="110">
                 </div>
             </div>
+
         </div>
         <div id="left">
             <div class="information">
                 <h1>{name}</h1>
-                <h2>{role}</h2>
+                <p style="line-height: 0px;">{role}</p>
             </div>
+            <br>
             <div class="projects">
                 <h2>Projetos</h2>
                 <p>{project_name}</p>
@@ -68,15 +70,16 @@ html_string = """
 """
 
 html_string = html_string.format(
-    body="{ background-color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin:10px; }",
+    body="{ background-color: white; font-family: serif; margin:10px; }",
     html="{ height: 1100px; width: 850px; }",
     h2="{ color:rgba(0, 255, 255, 0.603) }",
-    right="{ float:right; justify-content:space-between; margin-left: 0; margin-right: auto; }",
+    p ="{ font-family: serif; }",
+
+    right="{ float:right; }",
     right_box="{ background-color:gray; padding-block-end: 5px; padding-inline-start: 10px; padding-right: 10px; }",
     right_header="{ color:white; padding-top: 5px; }",
     right_content="{ color:lightgray }",
-    left="{ float:left; justify-content:space-between; margin-left: auto; margin-right: 0; }",
-    information="{ color: red; }",
+    left="{ float:left; }",
 
     name="Jose Rodrigues",
     role="Analista de desenvolvimento",
@@ -89,10 +92,10 @@ html_string = html_string.format(
     skills="Python",
     qrcode="../runiorr_qrcode.png",
 
-    project_name="Resume builder",
+    project_name="<b>Resume builder</b>",
     project_desc="Cria curriculos de forma automatica",
 
-    work_name="DB - Desenvolvedor full stack",
+    work_name="<b>DB - Desenvolvedor full stack</b>",
     work_time="02/2022 - Atualmente",
     work_desc="Desenvolvo automações",
 

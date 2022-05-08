@@ -5,17 +5,17 @@
         <title>Resume</title>
     </head>
     <style>
-        body { background-color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin:10px; }
+        body { background-color: white; font-family: serif; margin:10px; }
         html, body { height: 1100px; width: 850px; }
         h2 { color:rgba(0, 255, 255, 0.603) }
+        p { font-family: serif; }
 
-        #right { float:right; justify-content:space-between; margin-left: 0; margin-right: auto; }
+        #right { float:right; }
         #right_box { background-color:gray; padding-block-end: 5px; padding-inline-start: 10px; padding-right: 10px; }
         #right_header { color:white; padding-top: 5px; }
         #right_content { color:lightgray }
 
-        #left { float:left; justify-content:space-between; margin-left: auto; margin-right: 0; }
-        .information { color: red; }
+        #left { float:left; }
     </style>
     <body>
         <div id="right">
@@ -36,24 +36,32 @@
                     </div>
                 </div>
                 <div id="right_box">
-                    <h3 id="right_header">Apoie o criador</h3>
-                    <img src=../runiorr_qrcode.png width="100" width="110" height="110">
+                    <h3 
+                    id="right_header" 
+                    style="text-align: center;">
+                    Apoie o criador
+                    </h3>
+                    <img src=../runiorr_qrcode.png
+                    style="display: block; margin-left: auto; margin-right: auto;"
+                    width="120" height="120">
                 </div>
             </div>
+
         </div>
         <div id="left">
             <div class="information">
                 <h1>Jose Rodrigues</h1>
-                <h2>Analista de desenvolvimento</h2>
+                <p style="line-height: 0px;">Analista de desenvolvimento</p>
             </div>
+            <br>
             <div class="projects">
                 <h2>Projetos</h2>
-                <p>Resume builder</p>
+                <p><b>Resume builder</b></p>
                 <p>Cria curriculos de forma automatica</p>
             </div>
             <div class="works">
                 <h2>Experiência</h2>
-                <p>DB - Desenvolvedor full stack</p>
+                <p><b>DB - Desenvolvedor full stack</b></p>
                 <p>02/2022 - Atualmente</p>
                 <p>Desenvolvo automações</p>
             </div>

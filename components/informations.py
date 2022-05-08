@@ -9,7 +9,7 @@ class Informations(Component):
         self.header = input("Qual o seu nome?\n- ").title()
     
     def setRole(self):
-        self.title = input("Qual cargo deseja colocar?\n- ").title()
+        self.title = input("Qual cargo deseja colocar?\n- ").capitalize()
 
     def setContact(self):
         cellphone = input("Qual seu número de telefone?\n- ")

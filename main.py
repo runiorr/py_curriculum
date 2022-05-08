@@ -12,9 +12,9 @@ work = Works()
 edu = Educations()
 skill = Skills()
 
-text_content = [info, proj, work, edu, skill]
+resume_section = [info, proj, work, edu, skill]
 fillVisitor = FillVisitor()
-[text.accept(fillVisitor) for text in text_content]
+[section.accept(fillVisitor) for section in resume_section]
 
 print("Pronto! Espere o download começar.")
 
