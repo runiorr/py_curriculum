@@ -24,8 +24,8 @@ html_string = """
                 <div id="right_content">
                     <p>{cellphone}</p>
                     <p>{email}</p>
-                    <p>{linkedin}</p>
-                    <p>{github}</p>
+                    <p><a href={linkedin}>{linkedin}</a></p>
+                    <p><a href={github}>{github}</a></p>
                 </div>
             </div>
             <div class="skills/support">
@@ -72,7 +72,7 @@ html_string = html_string.format(
     html="{ height: 1100px; width: 850px; }",
     h2="{ color:rgba(0, 255, 255, 0.603) }",
     right="{ float:right; justify-content:space-between; margin-left: 0; margin-right: auto; }",
-    right_box="{ background-color:gray; padding-block-end: 5px; padding-inline-start: 10px; padding-right: 100px; }",
+    right_box="{ background-color:gray; padding-block-end: 5px; padding-inline-start: 10px; padding-right: 10px; }",
     right_header="{ color:white; padding-top: 5px; }",
     right_content="{ color:lightgray }",
     left="{ float:left; justify-content:space-between; margin-left: auto; margin-right: 0; }",
