@@ -10,6 +10,7 @@ class ResumeBuilder:
         # Set font
         plt.rcParams['font.family'] = 'sans-serif'
         plt.rcParams['font.sans-serif'] = 'STIXGeneral'
+        plt.rcParams['text.usetex'] = True
         fig, ax = plt.subplots(figsize=(8.5, 11))
         # Decorative Lines
         ax.axvline(x=.5, ymin=0, ymax=1, color='#007ACC', alpha=0.0, linewidth=50)
