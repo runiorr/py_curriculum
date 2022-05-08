@@ -3,7 +3,7 @@ from components.projects import Projects
 from components.works import Works
 from components.educations import Educations 
 from components.skills import Skills
-from resumeBuilder import ResumeBuilder
+from template.resumeBuilder import ResumeBuilder
 from visitor.fillVisitor import FillVisitor
 
 info = Informations()
