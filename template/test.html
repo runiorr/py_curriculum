@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Resume</title>
+    </head>
+    <style>
+        /* body {font-family: sans-serif;} */
+        html, body {height: 1100px; width: 850px;}
+        body {background-color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin:10px;}
+        h2 {color:rgba(0, 255, 255, 0.603)}
+
+        #right {float:right; justify-content:space-between; margin-left: 0; margin-right: auto;}
+        #right_box {background-color:gray; padding-block-end: 5px; padding-inline-start: 10px; padding-right: 100px;}
+        #right_header {color:white; padding-top: 5px;}
+        #right_content {color:lightgray}
+
+        #left {float:left; justify-content:space-between; margin-left: auto; margin-right: 0;}
+        .information {color: red;}
+
+    </style>
+    <body>
+        <div id="right">
+            <div id="right_box" class="contact">
+                <h3 id="right_header">Contato</h3>
+                <div id="right_content">
+                    <p>{cellphone}</p>
+                    <p>{email}</p>
+                    <p>{linkedin}</p>
+                    <p>{github}</p>
+                </div>
+            </div>
+            <div class="skills/support">
+                <div id="right_box">
+                    <h3 id="right_header">Habilidades</h3>
+                    <div id="right_content">
+                        <p>{skills}</p>
+                    </div>
+                </div>
+                <div id="right_box">
+                    <h3 id="right_header">Apoie o criador</h3>
+                    <img src={qrcode} width="100" width="110" height="110">
+                </div>
+            </div>
+        </div>
+        <div id="left">
+            <div class="information">
+                <h1>{name}</h1>
+                <h2>{role}</h2>
+            </div>
+            <div class="projects">
+                <h2>Projetos</h2>
+                <p>{project_name}</p>
+                <p>{project_desc}</p>
+            </div>
+            <div class="works">
+                <h2>Experiência</h2>
+                <p>{work_name}</p>
+                <p>{work_time}</p>
+                <p>{work_desc}</p>
+            </div>
+            <div class="education">
+                <h2>Educação</h2>
+                <p>{edu_name}</p>
+                <p>{edu_time}</p>
+            </div>
+        </div>
+    </body>
+</html>
