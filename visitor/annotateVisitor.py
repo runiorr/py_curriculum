@@ -12,8 +12,8 @@ class AnnotateVisitor:
     last_work = 0
 
     def visitInformations(self, information: Informations):
-        Header = '>>> Esse currículo foi feito 100% em Python. Considere ao lado >>>'
-        plt.annotate(Header, (left, 0.008), weight='regular', fontsize=8, alpha=.75)
+        footer = '>>> Esse currículo foi feito 100% em Python. Considere ao lado >>>'
+        plt.annotate(footer, (left, 0.008), weight='regular', fontsize=8, alpha=.75)
 
         name_heigh = .93
         role_heigh = name_heigh - .026
