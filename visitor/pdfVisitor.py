@@ -3,7 +3,7 @@ from components.projects import Projects
 from components.works import Works
 from components.educations import Educations 
 from components.skills import Skills
-from generate.margins import left, right, paragraph, header_distance, mini_header_distance, title_distance, time_distance, desc_distance, paragraph_distance
+from visitor.margins import left, right, paragraph, header_distance, mini_header_distance, title_distance, time_distance, desc_distance, paragraph_distance
 
 import matplotlib.pyplot as plt
 
