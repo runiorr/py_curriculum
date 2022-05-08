@@ -35,6 +35,9 @@ class PdfVisitor:
         p_header = .86
         p_title = p_header - title_distance
         p_desc = p_title - desc_distance
+        if (project.title == None):
+            PdfVisitor.last_project = p_header
+            return
         plt.annotate(project.header, (left, p_header), weight='bold', fontsize=10, color='#58C1B2')
         for ind in range(len(project.title)):
             plt.annotate(project.title[ind], (left, p_title), weight='bold', fontsize=10)
@@ -50,6 +53,9 @@ class PdfVisitor:
         w_title = w_header - title_distance
         w_time = w_title - time_distance
         w_desc = w_time - desc_distance
+        if (work.title == None):
+            PdfVisitor.last_work = PdfVisitor.last_project
+            return
         plt.annotate(work.header, (left, w_header), weight='bold', fontsize=10, color='#58C1B2')
         for ind in range(len(work.title)):
             plt.annotate(work.title[ind], (left, w_title), weight='bold', fontsize=10)
@@ -66,6 +72,8 @@ class PdfVisitor:
         e_header = PdfVisitor.last_work - header_distance
         e_title = e_header - title_distance
         e_time = e_title - time_distance
+        if (education.title == None):
+            return
         plt.annotate(education.header, (left, e_header), weight='bold', fontsize=10, color='#58C1B2')
         for ind in range(len(education.title)):
             plt.annotate(education.title[ind], (left, e_title), weight='bold', fontsize=10)
