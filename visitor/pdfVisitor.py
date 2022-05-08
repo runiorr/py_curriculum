@@ -7,7 +7,7 @@ from generate.margins import left, right, paragraph, header_distance, mini_heade
 
 import matplotlib.pyplot as plt
 
-class AnnotateVisitor:
+class PdfVisitor:
     last_project = 0
     last_work = 0
 
@@ -43,10 +43,10 @@ class AnnotateVisitor:
                 p_desc = p_desc - paragraph_distance
             p_title = p_desc - mini_header_distance
             p_desc = p_title - desc_distance
-        AnnotateVisitor.last_project = p_desc
+        PdfVisitor.last_project = p_desc
 
     def visitWorks(self, work: Works):
-        w_header = AnnotateVisitor.last_project - header_distance
+        w_header = PdfVisitor.last_project - header_distance
         w_title = w_header - title_distance
         w_time = w_title - time_distance
         w_desc = w_time - desc_distance
@@ -60,10 +60,10 @@ class AnnotateVisitor:
             w_title = w_desc - mini_header_distance
             w_time = w_title - time_distance
             w_desc = w_time - desc_distance
-        AnnotateVisitor.last_work = w_desc
+        PdfVisitor.last_work = w_desc
 
     def visitEducations(self, education: Educations):
-        e_header = AnnotateVisitor.last_work - header_distance
+        e_header = PdfVisitor.last_work - header_distance
         e_title = e_header - title_distance
         e_time = e_title - time_distance
         plt.annotate(education.header, (left, e_header), weight='bold', fontsize=10, color='#58C1B2')

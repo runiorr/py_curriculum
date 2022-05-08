@@ -4,7 +4,7 @@ from components.works import Works
 from components.educations import Educations 
 from components.skills import Skills
 
-class CreateVisitor:
+class FillVisitor:
 
     def validate_items(self, items):
         if items[0] == "": items[0]=1

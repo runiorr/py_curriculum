@@ -2,7 +2,7 @@ from components.component import Component
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
-from visitor.annotateVisitor import AnnotateVisitor
+from visitor.pdfVisitor import PdfVisitor
 
 class ResumeBuilder:
 
@@ -21,8 +21,8 @@ class ResumeBuilder:
         plt.axis('off')
 
         resume_text = [info, proj, work, edu, skill]
-        annotateVisitor = AnnotateVisitor()
-        [resume.accept(annotateVisitor) for resume in resume_text]
+        pdfVisitor = PdfVisitor()
+        [resume.accept(pdfVisitor) for resume in resume_text]
         
         # Add QR Code
         plt.annotate("Apoie o criador", (.762,.22), weight='bold', fontsize=11, color='#ffffff')
