@@ -1,7 +1,7 @@
 left = 0.02
 right = 0.7
 paragraph = .035
-header_distance = .01
+header_distance = .008
 mini_header_distance = .035
 title_distance = .02
 paragraph_distance = .015

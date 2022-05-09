@@ -38,4 +38,4 @@ class Component:
             if(text[0]=="" or text[0] == "-"):
                 return None
             else:
-                return wrap(text,75)
+                return wrap(text,70)
