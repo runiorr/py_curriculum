@@ -1,3 +1,5 @@
+from xhtml2pdf import pisa
+
 html_string = """
 <!DOCTYPE html>
 <html>
@@ -36,7 +38,7 @@ html_string = """
                     </div>
                 </div>
                 <div id="right_box">
-                    <h3 id="right_header">Apoie o criador</h3>
+                    <a href="{pay_link}"><h3 id="right_header">Apoie o criador</h3></a>
                     <img src={qrcode} width="110" height="110">
                 </div>
             </div>
@@ -90,7 +92,8 @@ html_string = html_string.format(
     github="www.github.com/runiorr",
 
     skills="Python",
-    qrcode="../runiorr_qrcode.png",
+    pay_link="https://mpago.la/1bjYDLn",
+    qrcode="runiorr_qrcode.png",
 
     project_name="<b>Resume builder</b>",
     project_desc="Cria curriculos de forma automatica",
@@ -103,16 +106,13 @@ html_string = html_string.format(
     edu_time="10/2021 - 04/2023",
     )
 
-# print(html_string)
-
-with open("testing/test.html", "w") as file:
+with open("htmlToPDF/template.html", "w") as file:
     file.write(html_string)
 
-from xhtml2pdf import pisa             
 
-def convert_html_to_pdf(source_html, output_filename):
+def convert_html_to_pdf(source_html, pdf_output):
     # open output file for writing (truncated binary)
-    result_file = open(output_filename, "w+b")
+    result_file = open(pdf_output, "w+b")
 
     # convert HTML to PDF
     pisa_status = pisa.CreatePDF(
@@ -125,9 +125,5 @@ def convert_html_to_pdf(source_html, output_filename):
     # return False on success and True on errors
     return pisa_status.err
 
-# Define your data
-source_html = open('testing/test.html')
-output_filename = "testing/test.pdf"
-convert_html_to_pdf(source_html, output_filename)
-
-print("DONE")
+pdf_output = "htmlToPDF/user_resume.pdf"
+convert_html_to_pdf(html_string, pdf_output)
