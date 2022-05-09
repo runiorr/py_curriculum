@@ -24,7 +24,7 @@ class ResumeBuilder:
         [section.accept(pdfVisitor) for section in resume_section]
         
         # Add QR Code
-        plt.annotate("Apoie o criador", (.762,.22), weight='bold', fontsize=11, color='#ffffff')
+        plt.annotate("Clique aqui para apoiar", (.717,.22), url="https://mpago.la/1bjYDLn", weight='bold', fontsize=11, color='#ffffff')
         qr_code = mpimg.imread('runiorr_qrcode.png')
         imagebox = OffsetImage(qr_code, zoom=0.22)
         ab = AnnotationBbox(imagebox, (0.84, 0.108))
