@@ -39,3 +39,9 @@ class Component:
                 return None
             else:
                 return wrap(text,70)
+    
+    def breakSkills(self, text):
+        new_text = []
+        for t in text:
+            new_text.append(wrap(t,35))
+        return new_text

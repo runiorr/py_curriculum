@@ -86,8 +86,11 @@ class PdfVisitor:
     def visitSkills(self, skill: Skills):
         s_header = .85
         plt.annotate(skill.header, (right, s_header), weight='bold', fontsize=10, color='#ffffff')
-        for s in skill.desc:
-            s = s.strip().title()
-            s_desc = s_header - desc_distance
-            plt.annotate(s, (right, s_desc), weight='regular', fontsize=10, color='#ffffff')
-            s_header -= desc_distance
+        skill.desc = skill.breakSkills(skill.desc)
+        for skill_list in skill.desc:
+            for skill in skill_list:
+                if skill == skill_list[0]: skill = skill.capitalize()
+                skill = skill.strip()
+                s_desc = s_header - desc_distance
+                plt.annotate(skill, (right, s_desc), weight='regular', fontsize=10, color='#ffffff')
+                s_header -= desc_distance

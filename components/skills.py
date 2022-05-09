@@ -6,5 +6,5 @@ class Skills(Component):
         super().__init__("Habilidades")
     
     def setDesc(self):
-        self.desc = input(f"{self.header} - Liste elas separadas por ',' e espaço (ex: Python, Java)\n- ")
+        self.desc = input(f"{self.header} - Liste elas separadas por ',' (ex: Python, Java)\n- ")
         self.desc = self.desc.split(',')
