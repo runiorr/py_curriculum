@@ -25,11 +25,13 @@ class PdfVisitor:
         email = cellphone - desc_distance # contatos
         linkedin = email - desc_distance # sites
         github = linkedin - desc_distance # sites
+        usr_linkedin = information.desc.split(',')[0]
+        usr_github = information.desc.split(',')[1]
         plt.annotate("Contato", (right, CONTATO_header), weight='bold', fontsize=10, color='#ffffff')
-        plt.annotate(information.time.split(',')[0], (right, cellphone), weight='regular', fontsize=8, color='#ffffff') # Contact
-        plt.annotate(information.time.split(',')[1], (right, email), weight='regular', fontsize=8, color='#ffffff') # Sites
-        plt.annotate(information.desc.split(',')[0], (right, linkedin), weight='regular', fontsize=8, color='#ffffff')
-        plt.annotate(information.desc.split(',')[1], (right, github), weight='regular', fontsize=8, color='#ffffff')
+        plt.annotate(f"Telefone: {information.time.split(',')[0]}", (right, cellphone), weight='regular', fontsize=8, color='#ffffff')
+        plt.annotate(information.time.split(',')[1], (right, email), weight='regular', fontsize=8, color='#ffffff')
+        plt.annotate(f"Linkedin/in/{usr_linkedin}", (right, linkedin),url=f"www.linkedin.com/in/{usr_linkedin}", weight='regular', fontsize=8, color='#ffffff')
+        plt.annotate(f"Github/{usr_github}", (right, github),url=f"www.github.com/{usr_github}", weight='regular', fontsize=8, color='#ffffff')
 
     def visitProjects(self, project: Projects):
         p_header = .86

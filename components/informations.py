@@ -17,6 +17,6 @@ class Informations(Component):
         self.time = f"{cellphone},{email}"
 
     def setSites(self):
-        linkedin = input("Qual seu linkedin?\n- ")
-        github = input("Qual seu github?\n- ")
+        linkedin = input("Qual seu linkedin? Somente seu usuário -> linkedin.com/in/<usuario>\n- ")
+        github = input("Qual seu github? Somente seu usuário -> github.com/<usuario>\n- ")
         self.desc = f"{linkedin},{github}"
