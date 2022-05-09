@@ -24,7 +24,7 @@ class Works(Component):
             self.desc = []
         
         if parte is None:
-            text = input(f"{self.header} - Resumo \n- ")
+            text = input(f"{self.header} - Resumo (Comece com '-' para listar itens)\n- ")
         else:
             text = input(f"{self.header} - Resumo {parte} (Enter para finalizar)\n- ")
             
