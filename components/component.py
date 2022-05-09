@@ -34,4 +34,8 @@ class Component:
         print(self.desc, type(self.desc))
     
     def breakLines(self, text):
-        return wrap(text,75)
+        if text:
+            if(text[0]=="" or text[0] == "-"):
+                return None
+            else:
+                return wrap(text,75)
