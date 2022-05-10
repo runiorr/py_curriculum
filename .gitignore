@@ -4,6 +4,8 @@ __pycache__/
 *$py.class
 
 resume.pdf
+htmlToPDF/
+.htmlToPDF
 
 # C extensions
 *.so
